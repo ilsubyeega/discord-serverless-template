@@ -13,7 +13,7 @@ const github : Command = {
             data: {
                 embeds: [
                     {
-                        description: "[Click Here](https://naver.com/) to check the source of this bot!"
+                        description: "[Click Here](https://github.com/ilsubyeega/discord-slash-vercel-template) to check the source of this bot!"
                     }
                 ],
                 flags: 64 // EPHEMERAL
