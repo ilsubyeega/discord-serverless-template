@@ -1,0 +1,29 @@
+{
+  "name": "discord-slash-vercel-template",
+  "version": "1.0.0",
+  "description": "Discord slash command template for vercel.com serverless function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "register-commands": "npx ts-node scripts/register_commands.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilsubyeega/discord-slash-vercel-template.git"
+  },
+  "author": "ilsubyeega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilsubyeega/discord-slash-vercel-template/issues"
+  },
+  "homepage": "https://github.com/ilsubyeega/discord-slash-vercel-template#readme",
+  "dependencies": {
+    "@types/micro": "^7.3.6",
+    "@vercel/node": "^1.11.1",
+    "axios": "^0.21.1",
+    "discord-interactions": "^2.3.0",
+    "dotenv": "^10.0.0",
+    "micro": "^9.3.4",
+    "ts-node": "^10.1.0"
+  }
+}
