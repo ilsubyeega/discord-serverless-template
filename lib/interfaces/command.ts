@@ -12,7 +12,7 @@ export interface CommandInformation {
     name: string,
     description: string,
     options?: CommandOption[],
-    default_permission?: true
+    default_permission?: boolean
 }
 
 
