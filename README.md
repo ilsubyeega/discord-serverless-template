@@ -1,12 +1,14 @@
 # discord-slash-vercel-template
 Discord slash command implementation of Vercel Serverless(https://vercel.com/) for use of myself.
 
-## TODO
-[ ] Message component support
+## Features
+- Slash commands
+- Message components
 
 ## Commands
 ```
 npm run register-commands
+vercel dev # for debugging process
 ```
 
 ## Fun fact

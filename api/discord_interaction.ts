@@ -6,7 +6,7 @@ import {
 import { handle_auth } from './../lib/discord_auth';
 import { Interaction } from './../lib/interfaces/discord/interaction';
 import { Commands } from './../commands/';
-
+import { Interactions } from './../interactions/';
 
 const BYPASS_SECRET_KEY = process.env.BYPASS_SECRET_KEY || undefined;
 export default async (req: VercelRequest, res: VercelResponse) => {
@@ -37,6 +37,17 @@ export default async (req: VercelRequest, res: VercelResponse) => {
                 const q = await search[0].handle(interaction);
                 return res.status(200).json(q);
 
+            }
+
+            case InteractionType.MESSAGE_COMPONENT: {
+                const custom_id = interaction.data?.custom_id;
+                if (custom_id == null) throw 'This should be not null.';
+
+                const search = Interactions.filter(a => a.custom_id == custom_id);
+                if (search == null || search.length == 0) throw `Custom id ${custom_id} not found.`;
+
+                const q = await search[0].handle(interaction);
+                return res.status(200).json(q);
             }
 
             default:

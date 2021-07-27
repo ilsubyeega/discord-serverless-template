@@ -11,7 +11,7 @@ const ping : Command = {
         return {
             type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {
-                content: "Pong",
+                content: "Pong!",
                 flags: 64 // EPHEMERAL
             }
         };

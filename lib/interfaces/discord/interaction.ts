@@ -3,6 +3,7 @@ import { GuildMember } from './guild';
 import { Embed } from './embed'
 import { Snowflake } from './snowflake'
 import { ApplicationCommandOptionType } from './../command';
+import { Component, Button, SelectMenu } from './components';
 export interface Interaction {
     id: Snowflake;
     type: InteractionType;
@@ -11,6 +12,8 @@ export interface Interaction {
     member: GuildMember;
     token: string;
     version: number;
+    // This is always present on application command interaction types. 
+    // It is optional for future-proofing against new interaction types
     data?: ApplicationCommandInteractionData;
 }
 export interface InteractionResponse {
@@ -18,13 +21,12 @@ export interface InteractionResponse {
     data?: ApplicationCommandCallbackData;
 }
 export interface ApplicationCommandCallbackData {
-    // TODO: Fix undefined property
     tts?: boolean;
     content?: string;
     embeds?: Embed[];
-    allowed_mentions?: undefined;
+    allowed_mentions?: AllowedMentions;
     flags?: number;
-    components?: undefined;
+    components?: Component[] | Button[] | SelectMenu[];
 }
 export interface ApplicationCommandInteractionData {
     id: Snowflake;
@@ -53,4 +55,10 @@ export enum InteractionCallbackType {
     // Only valid for component-based interactions below enum values
     DEFERRED_UPDATE_MESSAGE = 6,
     UPDATE_MESSAGE = 7,
+}
+export interface AllowedMentions {
+    parse: string[]; // "roles", "users", "everyone"
+    roles: Snowflake[];
+    users: Snowflake[];
+    replied_user: false;
 }
