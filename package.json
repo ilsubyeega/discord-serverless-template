@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "register-commands": "npx ts-node scripts/register_commands.ts"
+    "register-commands": "npx ts-node scripts/register_commands.ts",
+    "unregister-commands": "npx ts-node scripts/unregister_commands.ts"
   },
   "repository": {
     "type": "git",

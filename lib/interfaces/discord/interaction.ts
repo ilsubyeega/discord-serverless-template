@@ -1,9 +1,11 @@
 import { InteractionType } from 'discord-interactions';
-import { GuildMember } from './guild';
+import { GuildChannel, GuildMember, GuildRole } from './guild';
 import { Embed } from './embed'
 import { Snowflake } from './snowflake'
 import { ApplicationCommandOptionType } from './../command';
 import { Component, Button, SelectMenu } from './components';
+import { Member, User } from './user';
+import { Message } from './message';
 export interface Interaction {
     id: Snowflake;
     type: InteractionType;
@@ -33,14 +35,17 @@ export interface ApplicationCommandInteractionData {
     name: string;
     resolved?: ApplicationCommandInteractionDataResolved;
     options?: ApplicationCommandInteractionDataOption[];
+    target_id?: Snowflake;
     custom_id: string;
     component_type: number;
 }
 export interface ApplicationCommandInteractionDataResolved {
-    users?: Snowflake[];
-    members?: Snowflake[];
-    roles?: Snowflake[];
-    channels?: Snowflake[];
+    // TODO : Change Type Aliases bug
+    users?: {[key: string]: User};
+    members?: {[key: string]: Member};
+    roles?: {[key: string]: GuildRole};
+    channels?: {[key: string]: GuildChannel};
+    messages?: {[key: string]: Message};
 }
 export interface ApplicationCommandInteractionDataOption {
     name: string;

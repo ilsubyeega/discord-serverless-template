@@ -1,4 +1,5 @@
 import { Interaction, InteractionResponse } from './discord/interaction';
+import { Snowflake } from './discord/snowflake';
 
 
 export interface Command {
@@ -9,12 +10,21 @@ export interface Command {
 }
 
 export interface CommandInformation {
+    id?: Snowflake;
+    type?: ApplicationCommandtype,
+    application_id?: Snowflake,
+    guild_id?: Snowflake,
     name: string,
-    description: string,
+    description?: string,
     options?: CommandOption[],
     default_permission?: boolean
 }
 
+export enum ApplicationCommandtype {
+    CHAT_INPUT = 1,
+    USER = 2,
+    MESSAGE = 3
+}
 
 export interface CommandOption {
     type: ApplicationCommandOptionType,

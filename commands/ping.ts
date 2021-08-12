@@ -1,9 +1,10 @@
-import { Command } from './../lib/interfaces/command';
+import { ApplicationCommandtype, Command } from './../lib/interfaces/command';
 import { InteractionCallbackType } from '../lib/interfaces/discord/interaction';
 const ping : Command = {
     name: 'Ping!',
     command_name: 'ping',
     information: {
+        type: ApplicationCommandtype.CHAT_INPUT,
         name: 'ping',
         description: 'Ping, Pong!',
     },

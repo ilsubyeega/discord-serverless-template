@@ -1,9 +1,10 @@
-import { Command } from './../lib/interfaces/command';
+import { ApplicationCommandtype, Command } from './../lib/interfaces/command';
 import { InteractionCallbackType } from '../lib/interfaces/discord/interaction';
 const github : Command = {
     name: 'Displays the github address.',
     command_name: 'github',
     information: {
+        type: ApplicationCommandtype.CHAT_INPUT,
         name: 'github',
         description: 'Displays the github address.',
     },

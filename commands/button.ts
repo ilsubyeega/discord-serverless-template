@@ -1,10 +1,11 @@
-import { Command, ApplicationCommandOptionType, } from '../lib/interfaces/command';
+import { Command, ApplicationCommandOptionType, ApplicationCommandtype, } from '../lib/interfaces/command';
 import { InteractionCallbackType, InteractionResponse } from '../lib/interfaces/discord/interaction';
 import { ButtonStyle } from '../lib/interfaces/discord/components';
 const button: Command = {
     name: 'Test a button',
     command_name: 'button',
     information: {
+        type: ApplicationCommandtype.CHAT_INPUT,
         name: 'button',
         description: 'Test a button.',
         options: [

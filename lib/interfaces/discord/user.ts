@@ -15,3 +15,14 @@ export interface User {
   premium_type?: number;
   public_flags?: number;
 };
+export interface Member {
+  user?: User;
+  nick?: string;
+  roles: Snowflake[];
+  joined_at: string;
+  premium_since: string;
+  deaf: boolean;
+  mute: boolean;
+  pending?: boolean;
+  permissions?: string;
+}
