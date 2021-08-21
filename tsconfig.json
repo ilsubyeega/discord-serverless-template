@@ -1,8 +1,10 @@
 {
     "compilerOptions": {
-        "target": "ES2020",
+        "target": "es2019",
+        "outDir": "build",
         "module": "commonjs",
         "lib": [
+            "es2019",
             "ES2020",
             "dom"
         ],

@@ -1,8 +1,12 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-import { handle_auth } from './../lib/handle_auth';
-import { handle_interaction } from './../lib/handle_interaction';
+import * as express from 'express'
+import { handle_auth } from './lib/handle_auth';
+import { handle_interaction } from './lib/handle_interaction';
+const app = express.default();
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+app.get('/', (req, res) => {
+    res.send("Great Success!");
+})
+app.post('/discord_interaction', async (req, res) => {
     try {
         const auth = await handle_auth({
             headers: req.headers,
@@ -21,5 +25,12 @@ export default async (req: VercelRequest, res: VercelResponse) => {
         console.log("Error in discord_interaction", e);
         return res.status(501).json({ error: e });
     }
+})
 
-}
+if (process.env.DETA_RUNTIME == null) {
+    app.listen(5000, () => {
+        console.log("Server is running on 5000.")
+    })
+};
+
+module.exports = app;

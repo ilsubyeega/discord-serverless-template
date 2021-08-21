@@ -1,5 +1,7 @@
 node_modules/
 .vercel
 .env
+.env.*
 pnpm-lock.yaml
 package-lock.json
+build/

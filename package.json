@@ -1,30 +1,38 @@
 {
-  "name": "discord-slash-vercel-template",
-  "version": "1.0.0",
-  "description": "Discord slash command template for vercel.com serverless function",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "register-commands": "npx ts-node scripts/register_commands.ts",
-    "unregister-commands": "npx ts-node scripts/unregister_commands.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ilsubyeega/discord-slash-vercel-template.git"
-  },
-  "author": "ilsubyeega",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ilsubyeega/discord-slash-vercel-template/issues"
-  },
-  "homepage": "https://github.com/ilsubyeega/discord-slash-vercel-template#readme",
-  "dependencies": {
-    "@types/micro": "^7.3.6",
-    "@vercel/node": "^1.11.1",
-    "axios": "^0.21.1",
-    "discord-interactions": "^2.3.0",
-    "dotenv": "^10.0.0",
-    "micro": "^9.3.4",
-    "ts-node": "^10.1.0"
-  }
+    "name": "discord-slash-vercel-template",
+    "version": "1.0.0",
+    "description": "Discord slash command template for vercel.com serverless function",
+    "main": "index.js",
+    "scripts": {
+        "compile": "npx tsc && npm run copyfiles",
+        "copyfiles": "npx copyfiles -f ./package.json ./build",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "register-commands": "npx ts-node scripts/register_commands.ts",
+        "unregister-commands": "npx ts-node scripts/unregister_commands.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ilsubyeega/discord-slash-vercel-template.git"
+    },
+    "author": "ilsubyeega",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ilsubyeega/discord-slash-vercel-template/issues"
+    },
+    "homepage": "https://github.com/ilsubyeega/discord-slash-vercel-template#readme",
+    "dependencies": {
+        "@types/micro": "^7.3.6",
+        "@vercel/node": "^1.11.1",
+        "axios": "^0.21.1",
+        "discord-interactions": "^2.3.0",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "micro": "^9.3.4",
+        "ts-node": "^10.1.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "copyfiles": "^2.4.1",
+        "rimraf": "^3.0.2"
+    }
 }
