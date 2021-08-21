@@ -20,7 +20,7 @@ export async function handle_auth(input: AuthInput): Promise<AuthOutput> {
     }
 
     // Discord Interaction Validation
-    const body = typeof input.body == "string" ? JSON.stringify(input.body) : input.body
+    const body = typeof input.body == "string" ? input.body : JSON.stringify(input.body)
     
     try {
         const is_valid_request = verifyKey(
@@ -43,7 +43,7 @@ export async function handle_auth(input: AuthInput): Promise<AuthOutput> {
         }
     }
 
-    const interaction = JSON.parse(input.body) as Interaction;
+    const interaction = JSON.parse(body) as Interaction;
     if (!interaction) return {
         is_success: false,
         errormsg: "Invalid form body"

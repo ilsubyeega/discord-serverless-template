@@ -8,7 +8,6 @@ const context_message : Command = {
         name: 'context_message'
     },
     handle: async (interaction) => {
-        console.log(interaction)
         const data = interaction.data!;
         const message = data.resolved!.messages![data.target_id!];
         return {
