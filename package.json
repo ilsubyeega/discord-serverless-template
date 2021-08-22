@@ -1,7 +1,7 @@
 {
-    "name": "discord-slash-vercel-template",
+    "name": "discord-serverless-template",
     "version": "1.0.0",
-    "description": "Discord slash command template for vercel.com serverless function",
+    "description": "Discord interaction template for vercel/deta serverless function",
     "main": "index.js",
     "scripts": {
         "compile": "npx tsc && npm run copyfiles",

@@ -1,9 +1,10 @@
-# discord-slash-vercel-template
-Discord slash command implementation of Vercel Serverless(https://vercel.com/) for use of myself.
+# discord-serverlesss-template
+Discord slash command/interaction implementation for [Vercel](https://vercel.com/) and [Deta](https://deta.sh/) for use of myself.
 
 ## Features
 - Slash commands
 - Message components
+- Context menus
 
 ## Structure
 ```
@@ -16,14 +17,14 @@ Discord slash command implementation of Vercel Serverless(https://vercel.com/) f
 ```
 
 ## Run on vercel
-```
+```bash
 npm run register-commands
-#Fork this repository and fill out the environment variables.
+# Fork this repository and fill out the environment variables.
 vercel dev # for debugging process
 ```
 
 ## Run on deta
-```
+```bash
 npm run register-commands
 npm run compile
 deta new --name discord-serverless-template build
@@ -37,3 +38,4 @@ deta update -e .env
 | DISCORD_BOT_TOKEN      | Your Bot Token.                                        |
 | DISCORD_PUBLIC_KEY     | Your Public Key for validating interactions.           |
 | DISCORD_APPLICATION_ID | Your application key for (un)registering commands etc. |
+| BYPASS_SECRET          | Secret Key for bypassing handle_auth. *(optional)*     |
