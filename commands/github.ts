@@ -8,7 +8,7 @@ const github : Command = {
         name: 'github',
         description: 'Displays the github address.',
     },
-    handle: async (interaction) => {
+    handle: async () => {
         return {
             type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {

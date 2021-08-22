@@ -2,7 +2,7 @@ import { MessageInteraction } from './../lib/interfaces/interaction';
 import { InteractionCallbackType } from '../lib/interfaces/discord/interaction';
 const success_button : MessageInteraction = {
     custom_id: "success_button",
-    handle: async (interaction) => {
+    handle: async () => {
         return {
             type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {

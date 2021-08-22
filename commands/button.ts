@@ -18,8 +18,8 @@ const button: Command = {
     },
     handle: async (interaction) => {
         let value;
-        if (interaction.data!.options?.[0].name == 'argument')
-            value = interaction.data!.options?.[0].value;
+        if (interaction.data?.options?.[0].name == 'argument')
+            value = interaction.data?.options?.[0].value;
         return {
             type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {

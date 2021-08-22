@@ -8,7 +8,7 @@ const ping : Command = {
         name: 'ping',
         description: 'Ping, Pong!',
     },
-    handle: async (interaction) => {
+    handle: async () => {
         return {
             type: InteractionCallbackType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {

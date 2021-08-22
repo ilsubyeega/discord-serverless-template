@@ -14,7 +14,7 @@ export interface User {
   flags?: number;
   premium_type?: number;
   public_flags?: number;
-};
+}
 export interface Member {
   user?: User;
   nick?: string;

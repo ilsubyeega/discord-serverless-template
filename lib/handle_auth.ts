@@ -1,4 +1,3 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import { verifyKey } from 'discord-interactions';
 import { IncomingHttpHeaders } from 'http';
 import { Interaction } from './interfaces/discord/interaction';
@@ -56,7 +55,7 @@ export async function handle_auth(input: AuthInput): Promise<AuthOutput> {
 export interface AuthInput {
     headers: IncomingHttpHeaders;
     method: string;
-    body: any;
+    body: unknown;
 }
 export interface AuthOutput {
     is_success: boolean;

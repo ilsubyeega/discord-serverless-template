@@ -1,7 +1,6 @@
 import { Interaction, InteractionCallbackType, InteractionResponse } from "./interfaces/discord/interaction";
 import {
     InteractionType,
-    InteractionResponseType,
 } from 'discord-interactions';
 import { Commands } from './../commands/';
 import { Interactions } from './../interactions/';

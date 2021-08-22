@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import dotenv from 'dotenv';
 import axios from 'axios';
 import { Commands } from '../commands/index';
@@ -25,7 +26,6 @@ Commands.forEach(command => {
             console.log(`${command.name} Registered with code: ${res.status}`);
         })
         .catch((err) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             console.log(command.name + " Failed to register with code: ", err?.response?.status);
             console.log(err?.response?.data?.message);
         });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import dotenv from 'dotenv';
 import axios from 'axios';
 import { CommandInformation } from '../lib/interfaces/command';
@@ -27,5 +28,5 @@ async function req() {
         }
     }
 }
-req().then(a => console.log("Done"))
+req().then(() => console.log("Done"))
     .catch(a => console.error(a));

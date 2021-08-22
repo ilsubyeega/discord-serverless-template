@@ -1,6 +1,5 @@
 import { User } from './user'
 import { Snowflake } from './snowflake'
-import { PartialEmoji } from './components'
 export interface GuildMember {
     user: User;
     nick?: string;
@@ -11,7 +10,7 @@ export interface GuildMember {
     mute: boolean;
     pending?: boolean;
     permissions?: string;
-};
+}
 export interface GuildChannel {
     id: Snowflake;
     type: GuildChannelType;
